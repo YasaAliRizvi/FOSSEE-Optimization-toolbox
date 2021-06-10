@@ -226,6 +226,8 @@ function [xopt,fopt,status,output] = cbcmatrixintlinprog (varargin)
         isInt(intcon(i)) = %t
     end
     
+    numintcons = int32(size(intcon,1));
+
     objSense = 1.0;
 
     //Changing into row vector
@@ -257,7 +259,7 @@ function [xopt,fopt,status,output] = cbcmatrixintlinprog (varargin)
         end
     end
 	
-    [xopt,fopt,status,nodes,nfpoints,L,U,niter] = matintlinprog(int32(nbVar),nbCon,c,intcon,conMatrix,conLB,conUB,lb,ub,objSense,optval);
+    [xopt,fopt,status,nodes,nfpoints,L,U,niter] = matintlinprog(int32(nbVar),nbCon,c,intcon,conMatrix,conLB,conUB,lb,ub,objSense,optval,numintcons);
 
     //Debugging Prints
     //disp(c);disp(intcon);disp(conMatrix);disp(conLB);disp(conUB);disp(lb);disp(ub);disp(Aeq);disp(beq);disp(xopt);

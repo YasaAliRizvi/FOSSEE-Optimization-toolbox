@@ -499,7 +499,7 @@ b=[2;1;1];
 //We specify the linear equality constraints below.
 Aeq = [1/3,-5; 2, 1];
 beq =  [11;8];
-// Run fminimax
+// Run fot_fgoalattain
 [x,fval,maxfval,exitflag,output,lambda] = fot_fgoalattain(gattainObjfun,x0,goal,weight,A,b,Aeq,beq)
 
 

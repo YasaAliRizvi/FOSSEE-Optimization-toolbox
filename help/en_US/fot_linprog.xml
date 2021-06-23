@@ -260,7 +260,7 @@ Primal Infeasible Problems: Find x in R^3 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
+\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
 \end{eqnarray}
 \\\text{Subjected to:}\\
 \begin{eqnarray}
@@ -301,7 +301,7 @@ Unbounded Problems: Find x in R^3 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
+\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
 \end{eqnarray}
 \\\text{Subjected to:}\\
 \begin{eqnarray}

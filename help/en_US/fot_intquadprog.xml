@@ -140,7 +140,7 @@ Find x in R^6 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x'\boldsymbol{\cdot} H\boldsymbol{\cdot}x + f' \boldsymbol{\cdot}  x\\
+\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x^T \boldsymbol{\cdot} H\boldsymbol{\cdot}x + f^T \boldsymbol{\cdot}  x\\
 \text{Where: } H &amp;= I_{6}\\
 F &amp;=
 \begin{array}{cccccc}
@@ -224,7 +224,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 //Integer Constraints
@@ -264,7 +264,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 //Variable bounds
@@ -292,7 +292,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 //Variable bounds
@@ -334,14 +334,13 @@ Infeasible Problems: Find x in R^6 such that it minimizes the objective function
 //Currently, this crashes Scilab because of a segfault error.
 //Minimize 0.5*x'*H*x + f'*x with
 f=[1; 2; 3; 4; 5; 6]; H=eye(6,6);
-f=[1; 2; 3; 4; 5; 6]; H=eye(6,6);
 //Inequality constraints
 A= [0,1,0,1,2,-1;
 -1,0,2,1,1,0];
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [0,1,0,1,2,-1;
--1,0,-3,-4,5,6];
+-1,0,2,1,1,0];
 beq=[4; 2];
 //Integer Constraints
 intcon = [2 ,4];
@@ -358,7 +357,7 @@ Unbounded Problems: Find x in R^6 such that it minimizes the objective function 
 <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x'\boldsymbol{\cdot} H\boldsymbol{\cdot}x + f' \boldsymbol{\cdot}  x\\
+\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x^T \boldsymbol{\cdot} H\boldsymbol{\cdot}x + f^T \boldsymbol{\cdot}  x\\
 \text{Where H is specified below and} \\
 F &amp;=
 \begin{array}{cccccc}
@@ -378,6 +377,7 @@ F &amp;=
 </para>
    <programlisting role="example"><![CDATA[
 //Example 7:
+//Currently, this CRASHES Scilab because of a segmentation fault error
 //Minimize 0.5*x'*H*x + f'*x with
 f=[1; 2; 3; 4; 5; 6]; H=eye(6,6); H(1,1) = -1;
 //Inequality constraints
@@ -386,7 +386,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6];
+-1,0,2,1,1,0];
 beq=[1; 2];
 intcon = [2 ,4];
 //Running fot_intquadprog

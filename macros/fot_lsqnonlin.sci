@@ -201,7 +201,7 @@ function [xopt,resnorm,residual,exitflag,output,lambda,gradient] = fot_lsqnonlin
 		error(errmsg);
 	end
 
-	options = struct(	"MaxIter"   , [3000], "CpuTime"   , [600], "GradObj"	, ["off"]);
+	options = struct(	"MaxIter"   , [3000], "CpuTime"   , [600], "GradObj"	, "off");
 
 	for i = 1:(size(param))/2
 
@@ -286,7 +286,7 @@ function [xopt,resnorm,residual,exitflag,output,lambda,gradient] = fot_lsqnonlin
 		y = sum(yVal.^2);
 	endfunction
 
-	if (options(6) == "on")
+	if (options("GradObj") == "on")
         ierr = execstr('[initx initdx]=_fun(x0)', "errcatch")
         if ierr <> 0 then
         lamsg = lasterror();
@@ -307,7 +307,7 @@ function [xopt,resnorm,residual,exitflag,output,lambda,gradient] = fot_lsqnonlin
 		endfunction
 	end
 	
-    options(6) = __fGrad;
+    options("GradObj") = __fGrad;
 	
     function [c, ceq] = nlc(x)
         c = [];

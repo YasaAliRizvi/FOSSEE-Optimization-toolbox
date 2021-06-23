@@ -377,6 +377,7 @@ F &amp;=
 </para>
    <programlisting role="example"><![CDATA[
 //Example 7:
+//Currently, this CRASHES Scilab because of a segmentation fault error
 //Minimize 0.5*x'*H*x + f'*x with
 f=[1; 2; 3; 4; 5; 6]; H=eye(6,6); H(1,1) = -1;
 //Inequality constraints

@@ -458,7 +458,7 @@ function y=f(x)
 y=-(x(1)^2 - x(1)*x(2)/3 + x(2)^2);
 endfunction
 x0=[0 , 0];
-A=[-1,-1 ; 1,1];
+A=[-1,-1 ; -1,-1];
 b=[-2;1];
 [x,fval,exitflag,output,lambda,grad,hessian] =fot_fmincon(f, x0,A,b)
 

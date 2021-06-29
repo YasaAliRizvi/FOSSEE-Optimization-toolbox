@@ -438,7 +438,7 @@ c=[x(1)^2-1,x(1)^2+x(2)^2-1];
 ceq=[];
 endfunction
 // Run fot_fminimax
-[x,fval,maxfval,exitflag,output,lambda] = fot_fminimax(myfun, x0,A,b,Aeq,beq,lb,ub)
+[x,fval,maxfval,exitflag,output,lambda] = fot_fminimax(myfun, x0,A,b,Aeq,beq,lb,ub,nlc)
 
 
    ]]></programlisting>

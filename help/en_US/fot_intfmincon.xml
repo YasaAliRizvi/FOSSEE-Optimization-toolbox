@@ -156,7 +156,7 @@ Find x in R^2 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) = x_{1}^{2} - x_{1}  \boldsymbol{\cdot}  x_{2}/3 + x_{2}^{2}
+\mbox{min}_{x}\ f(x) = -x_{1} - \dfrac{x_{2}}{3}
 \end{eqnarray}
 \\\text{Subjected to:}\\
 \begin{eqnarray}
@@ -391,13 +391,14 @@ f(x) = x_{1}  \boldsymbol{\cdot}  x_{2} + x_{2}  \boldsymbol{\cdot}  x_{3}
 \hspace{70pt} &amp;x_{1}^{2} &amp;\leq 1\\ 
 \hspace{70pt} &amp;x_{1}^{2} + x_{2}^{2}&amp;\leq 1\\ 
 \hspace{70pt} &amp;x_{3}^{2}&amp;\leq 1\\ 
-\hspace{70pt} &amp;x_{1}^{3}&amp;\leq 0.5\\ 
-\hspace{70pt} &amp;x_{2}^{2} + x_{3}^{2}&amp;\leq 0.75\\ 
+\hspace{70pt} &amp;x_{1}^{3}&amp;= 0.5\\ 
+\hspace{70pt} &amp;x_{2}^{2} + x_{3}^{2}&amp;= 0.75\\ 
 \end{eqnarray}\\
 \text{With variable bounds as: }\\
 \begin{eqnarray}
 \hspace{70pt} 0 &amp;\leq x_{1} &amp;\leq 0.6\\
 \hspace{70pt} 0.2 &amp;\leq x_{2} &amp;\leq \infty\\
+\hspace{70pt} -\infty &amp;\leq x_{3} &amp;\leq 1\\
 \end{eqnarray}\\
 \text{With integer constraints as: } \\
 \begin{eqnarray}

@@ -100,7 +100,7 @@ The options should be defined as type "list" and consist of the following fields
 The default values for the various items are given as:
    </para>
    <para>
-options = list("MaxIter", [3000], "CpuTime", [600]);
+options = list("MaxIter", [3000], "CpuTime", [600],"TolX", [1e-4]);
    </para>
 
    <para>

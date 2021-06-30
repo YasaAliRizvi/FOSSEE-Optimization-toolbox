@@ -135,7 +135,7 @@ For more details on exitflag, see the Bonmin documentation which can be found on
 A few examples displaying the various functionalities of fot_intlinprog have been provided below. You will find a series of problems and the appropriate code snippets to solve them.
    </para>
 
-<refsection>
+<!-- <refsection>
    <title>Example</title>
    <para>
  Here we solve a simple objective function, subjected to three linear inequality constraints.
@@ -177,7 +177,7 @@ intcon = [1 2 3 4];
 [x,f,status,output] = fot_intlinprog(c,intcon,A,b)
 // Press ENTER to continue
    ]]></programlisting>
-</refsection>
+</refsection> -->
 
 <refsection>
    <title>Example</title>
@@ -199,7 +199,7 @@ We add the following bounds to the problem specified above:   </para>
   </latex>
 </para>
    <programlisting role="example"><![CDATA[
-// Example 2:
+// Example 1:
 // Reference: Westerberg, Carl-Henrik, Bengt Bjorklund, and Eskil Hultman. "An application of mixed-integer
 // programming in a Swedish steel mill." Interfaces 7, no. 2 (1977): 39-43. Modified acc. to requirements.
   c = [350*5,330*3,310*4,280*6,500,450,400,100]';
@@ -236,7 +236,7 @@ In this example, we proceed to add the linear equality constraints to the object
   </latex>
 </para>
    <programlisting role="example"><![CDATA[
-// Example 3:
+// Example 2:
 // Reference: Westerberg, Carl-Henrik, Bengt Bjorklund, and Eskil Hultman. "An application of mixed-integer
 // programming in a Swedish steel mill." Interfaces 7, no. 2 (1977): 39-43. Modified acc. to requirements.
 c = [350*5,330*3,310*4,280*6,500,450,400,100]';
@@ -334,7 +334,7 @@ Unbounded Problems. Find x in R^8 such that it minimizes:
   </latex>
 </para>
    <programlisting role="example"><![CDATA[
-// Example 4:
+// Example 3:
 // Reference: Westerberg, Carl-Henrik, Bengt Bjorklund, and Eskil Hultman. "An application of mixed-integer
 // programming in a Swedish steel mill." Interfaces 7, no. 2 (1977): 39-43. Modified acc. to requirements.
 c = [350*5,330*3,310*4,280*6,500,450,400,100]';

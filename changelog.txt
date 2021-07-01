@@ -1,5 +1,14 @@
 Changelog
 ---------
+Version 0.4.1 (July 1, 2021)
+  HessianApproximation option has been added in fot_fmincon to allow the user to choose the method of calculating the hessian -- "exact" hessian approximation which uses second derivatives provided by the NLP or "limited-memory" hessian approximation which performs a limited-memory quasi-Newton approximation.
+  Integer constraints in the fot_intlinprog function are now working correctly.
+  The MPS file can now be passed to the function fot_intlinprog without throwing any error.
+  Bugs have been fixed in fot_lsqnonlin.
+  The content in the help files have been modified to improve correctness.
+  Errors have been removed from examples in various help files to ensure that they run correctly and give the expected results.
+
+  
 Version 0.4 (November 19, 2020)
 	The Optimization libraies and the toolbox is now completely built using opensource MinGW compiler on Windows
 	All functions are now prefixed with "fot_". For example, "fmincon" function is now renamed as "fot_fmincon"

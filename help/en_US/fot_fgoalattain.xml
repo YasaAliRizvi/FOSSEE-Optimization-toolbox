@@ -128,7 +128,7 @@ The options should be defined as type "list" and consist of the following fields
 <listitem>MaxIter : A Scalar, specifying the maximum number of iterations that the solver should take.</listitem>
 <listitem>CpuTime : A Scalar, specifying the maximum amount of CPU time in seconds that the solver should take.</listitem>
 <listitem>GradObj : A function, representing the gradient function of the Objective in Vector Form.</listitem>
-<listitem>GradCon : A function, representing the gradient of the Non-Linear Constraints (both Equality and Inequality) of the problem. It is declared in such a way that gradient of non-linear inequality constraints are defined first as a separate Matrix (cg of size m2 X n or as an empty), followed by gradient of non-linear equality constraints as a separate matrix (ceqg of size m2 X n or as an empty) where m2 &amp;amp; m3 are number of non-linear inequality and equality constraints respectively.</listitem>
+<listitem>GradCon : A function, representing the gradient of the Non-Linear Constraints (both Equality and Inequality) of the problem. It is declared in such a way that gradient of non-linear inequality constraints are defined first as a separate Matrix (cg of size m2 X n or as an empty), followed by gradient of non-linear equality constraints as a separate matrix (ceqg of size m3 X n or as an empty) where m2 and m3 are number of non-linear inequality and non-linear equality constraints respectively.</listitem>
 </itemizedlist>
 The default values for the various items are given as:
    </para>
@@ -158,7 +158,7 @@ It is of type "struct" and contains the following fields.
 <listitem>output.Cpu_Time  : The total cpu-time taken.</listitem>
 <listitem>output.Objective_Evaluation: The number of Objective Evaluations performed.</listitem>
 <listitem>output.Dual_Infeasibility  : The Dual Infeasiblity of the final soution.</listitem>
-<listitem>output.Message: The output message for the problem.</listitem>
+<listitem>output.Message: The output message for the problem corresponding to the exitflag.</listitem>
 </itemizedlist>
    </para>
     <para>
@@ -499,7 +499,7 @@ b=[2;1;1];
 //We specify the linear equality constraints below.
 Aeq = [1/3,-5; 2, 1];
 beq =  [11;8];
-// Run fminimax
+// Run fot_fgoalattain
 [x,fval,maxfval,exitflag,output,lambda] = fot_fgoalattain(gattainObjfun,x0,goal,weight,A,b,Aeq,beq)
 
 

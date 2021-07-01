@@ -168,16 +168,23 @@ int sci_solveminconp(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt 
     }
 	scilabVar temp1 = scilab_getListItem( env, in[14], 1);
 	scilabVar temp2 = scilab_getListItem( env, in[14], 3);
+	scilabVar temp3 = scilab_getListItem( env, in[14], 5);
 
-	double nIters = 0,cpu_Time =0;
+	double nIters = 0,cpu_Time =0, hess_Approx=0;
 	scilab_getDouble(env, temp1, &nIters);
 	scilab_getDouble(env, temp2, &cpu_Time);
-
+	scilab_getDouble(env, temp3, &hess_Approx);
+   
 	int maxIters = (int)nIters;
 	int cpu_time = (int)cpu_Time;
-
-	
-
+    int hessaprox= (int)hess_Approx;
+	string ha="";
+	switch(hessaprox)
+	{
+		case 1: ha="limited-memory";break;
+		case 0: ha="exact";break;
+		default: ha="exact";break;
+	}
 
 	//Number of variables and constraints
 	nVars = x0_cols;
@@ -195,8 +202,7 @@ int sci_solveminconp(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt 
 	app->Options()->SetNumericValue("tol", 1e-6);
 	app->Options()->SetIntegerValue("max_iter", maxIters);
 	app->Options()->SetNumericValue("max_cpu_time", cpu_time);
-	//app->Options()->SetStringValue("hessian_approximation","");
-//, "limited-memory");
+	app->Options()->SetStringValue("hessian_approximation",ha);
 
 	///////// Initialize the IpoptApplication and process the options /////////
 	ApplicationReturnStatus status;

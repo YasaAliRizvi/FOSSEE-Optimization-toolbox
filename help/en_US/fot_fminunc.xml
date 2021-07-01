@@ -124,7 +124,7 @@ It is of type "struct" and contains the following fields.
 <listitem>output.Cpu_Time  : The total cpu-time taken.</listitem>
 <listitem>output.Objective_Evaluation: The number of objective evaluations performed.</listitem>
 <listitem>output.Dual_Infeasibility  : The Dual Infeasiblity of the final soution.</listitem>
-<listitem>output.Message: The output message for the problem.</listitem>
+<listitem>output.Message: The output message for the problem corresponding to the exitflag.</listitem>
 </itemizedlist>
    </para>
    <para>

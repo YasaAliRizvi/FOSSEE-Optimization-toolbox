@@ -166,8 +166,8 @@ Find x in R^2 such that it minimizes:
 \\
 \hspace{1pt} &amp; \text{Subjected to}\\
   \begin{eqnarray}
--\infty &amp;\leq 2x_{1} &amp;\leq 5\\
--\infty &amp;\leq x_{2} &amp;\leq 3\\
+-\infty &amp;\leq x_{1} + x_{2} &amp;\leq 5\\
+-\infty &amp;\leq x_{1} &amp;\leq 3\\
 0 &amp;\leq x_{1} &amp;\leq \infty\\
 0 &amp;\leq x_{2} &amp;\leq \infty
 \end{eqnarray}
@@ -184,8 +184,8 @@ Find x in R^2 such that it minimizes:
 //    x1 <= 3,
 //    x1 >= 0,
 //    x2 >= 0
-H = [-16 0; 0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [1 1;1 0];
 conUB = [5;3];
 conLB = [-%inf; -%inf];
@@ -224,8 +224,8 @@ nbCon = 2;
    <programlisting role="example"><![CDATA[
 //Example 2: Standard quadratic objective function with starting points
 //Find x in R^2 such that:
-H = [-16 0; 0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [1 1;1 0];
 conUB = [5;3];
 conLB = [-%inf; -%inf];
@@ -262,8 +262,8 @@ We can further enhance the functionality of fot_quadprog by setting input option
 </para>
    <programlisting role="example"><![CDATA[
 //Example 3: Standard quadratic objective function with starting points and options.
-H = [-16 0; 0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [1 1;1 0];
 conUB = [5;3];
 conLB = [-%inf; -%inf];
@@ -289,8 +289,8 @@ Infeasible Problems: Find x in R^2 such that it minimizes:
 \\
 \hspace{1pt} &amp; \text{Subjected to}\\
   \begin{eqnarray}
--\infty &amp;\leq 2x_{1} &amp;\leq 5\\
--\infty &amp;\leq x_{2} &amp;\leq 3\\
+-\infty &amp;\leq x_{1} + x_{2} &amp;\leq 5\\
+-\infty &amp;\leq x_{1} &amp;\leq 3\\
 4 &amp;\leq x_{1} &amp;\leq \infty\\
 0 &amp;\leq x_{2} &amp;\leq \infty
 \end{eqnarray}
@@ -307,8 +307,8 @@ Infeasible Problems: Find x in R^2 such that it minimizes:
 //    x1 <= 3,
 //    x1 >= 0,
 //    x2 >= 0
-H = [-16 0; 0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [1 1;1 0]
 conUB = [5;3];
 conLB = [-%inf; -%inf];
@@ -334,7 +334,7 @@ Unbounded Problems: Find x in R^2 such that it minimizes:
 \end{eqnarray}\\
 &amp; \text{Subjected to}\\
   \begin{eqnarray}
--\infty &amp;\leq 2x_{1} &amp;\geq -5\\
+-\infty &amp;\leq -2x_{1} &amp;\leq 5\\
 -\infty &amp;\leq x_{2} &amp;\leq 3\\
 0 &amp;\leq x_{1} &amp;\leq \infty\\
 0 &amp;\leq x_{2} &amp;\leq \infty
@@ -346,8 +346,8 @@ Unbounded Problems: Find x in R^2 such that it minimizes:
    <programlisting role="example"><![CDATA[
 //Example 5: Unbounded Problem
 //Find x in R^2 such that:
-H = [-16 0; 0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [-2 0;0 1];
 conUB = [5;3];
 conLB = [-%inf; -%inf];

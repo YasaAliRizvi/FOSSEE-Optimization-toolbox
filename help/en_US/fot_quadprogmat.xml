@@ -165,7 +165,7 @@ Find x in R^6 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x'\boldsymbol{\cdot} H\boldsymbol{\cdot}x + f' \boldsymbol{\cdot}  x\\
+\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x^T \boldsymbol{\cdot} H\boldsymbol{\cdot}x + f^T \boldsymbol{\cdot}  x\\
 \text{Where: } H &amp;= I_{6}\\
 F &amp;=
 \begin{array}{cccccc}
@@ -237,7 +237,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 [xopt,fopt,exitflag,output,lambda]=fot_quadprogmat(H,f,A,b,Aeq,beq)
@@ -274,7 +274,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 //Variable bounds
@@ -301,7 +301,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6;
+-1,0,2,1,1,0;
 2,5,3,0,1,0];
 beq=[1; 2; 3];
 //Variable bounds
@@ -339,7 +339,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [0,1,0,1,2,-1;
--1,0,-3,-4,5,6];
+-1,0,2,1,1,0];
 beq=[4; 2];
 [xopt,fopt,exitflag,output,lambda]=fot_quadprogmat(H,f,A,b,Aeq,beq)
 ]]></programlisting>
@@ -353,7 +353,7 @@ Unbounded Problems: Find x in R^6 such that it minimizes the objective function 
 <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x'\boldsymbol{\cdot} H\boldsymbol{\cdot}x + f' \boldsymbol{\cdot}  x\\
+\mbox{min}_{x}\ f(x) &amp;= \dfrac{1}{2}x^T \boldsymbol{\cdot} H\boldsymbol{\cdot}x + f^T \boldsymbol{\cdot}  x\\
 \text{Where H is specified below and}\\
 F &amp;=
 \begin{array}{cccccc}
@@ -381,7 +381,7 @@ A= [0,1,0,1,2,-1;
 b = [-1; 2.5];
 //Equality constraints
 Aeq= [1,-1,1,0,3,1;
--1,0,-3,-4,5,6];
+-1,0,2,1,1,0];
 beq=[1; 2];
 [xopt,fopt,exitflag,output,lambda]=fot_quadprogmat(H,f,A,b,Aeq,beq)
 ]]></programlisting>

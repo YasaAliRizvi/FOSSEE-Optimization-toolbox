@@ -126,7 +126,7 @@ The options should be defined as type "struct" and consist of the following fiel
 <listitem>HessianApproximation : a Scalar, indicating what Hessian information is to be used. It has two possible values - 0 and 1. 0 represents "exact" hessian approximation which uses second derivatives provided by the NLP. 1 represents "limited-memory" hessian approximation which performs a limited-memory quasi-Newton approximation.</listitem>
 <listitem>GradObj : A function, representing the gradient function of the Objective in vector form.</listitem>
 <listitem>Hessian : A  function, representing the hessian function of the Lagrange in the form of a Symmetric Matrix with Input parameters as x, Objective factor and Lambda. Refer to Example 5 for definition of Lagrangian Hessian function.</listitem>
-<listitem>GradCon : A function, representing the gradient of the nonlinear Constraints (both Equality and Inequality) of the problem. It is declared in such a way that gradient of nonlinear inequality constraints are defined first as a separate Matrix (cg of size m2 X n or as an empty), followed by gradient of nonlinear equality constraints as a separate matrix (ceqg of size m2 X n or as an empty) where m2 &amp;amp; m3 are number of nonlinear inequality and equality constraints respectively.</listitem>
+<listitem>GradCon : A function, representing the gradient of the Non-Linear Constraints (both Equality and Inequality) of the problem. It is declared in such a way that gradient of non-linear inequality constraints are defined first as a separate Matrix (cg of size m2 X n or as an empty), followed by gradient of non-linear equality constraints as a separate matrix (ceqg of size m3 X n or as an empty) where m2 and m3 are number of non-linear inequality and non-linear equality constraints respectively.</listitem>
 </itemizedlist>
 The default values for the various items are given as:
    </para>
@@ -155,7 +155,7 @@ It is of type "struct" and contains the following fields.
 <listitem>output.Cpu_Time  : The total cpu-time taken.</listitem>
 <listitem>output.Objective_Evaluation: The number of Objective Evaluations performed.</listitem>
 <listitem>output.Dual_Infeasibility  : The Dual Infeasiblity of the final soution.</listitem>
-<listitem>output.Message: The output message for the problem.</listitem>
+<listitem>output.Message: The output message for the problem corresponding to the exitflag.</listitem>
 </itemizedlist>
    </para>
    <para>
@@ -458,7 +458,7 @@ function y=f(x)
 y=-(x(1)^2 - x(1)*x(2)/3 + x(2)^2);
 endfunction
 x0=[0 , 0];
-A=[-1,-1 ; 1,1];
+A=[-1,-1 ; -1,-1];
 b=[-2;1];
 [x,fval,exitflag,output,lambda,grad,hessian] =fot_fmincon(f, x0,A,b)
 

@@ -260,12 +260,12 @@ Primal Infeasible Problems: Find x in R^3 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
+\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  - x_{3}\\
 \end{eqnarray}
 \\\text{Subjected to:}\\
 \begin{eqnarray}
-\hspace{70pt} &amp;x_{1} + 2x_{2} - x{3}&amp;\leq -4\\
-\hspace{70pt} &amp;x_{1} + 4x_{2} + 3x{3}&amp;= 10\\
+\hspace{70pt} &amp;x_{1} + 2x_{2} - x_{3}&amp;\leq -4\\
+\hspace{70pt} &amp;x_{1} + 4x_{2} + 3x_{3}&amp;= 10\\
 \hspace{70pt} &amp;x_{1} + x_{2}&amp;= 100\\
 \end{eqnarray}
 \\
@@ -279,10 +279,10 @@ Primal Infeasible Problems: Find x in R^3 such that it minimizes:
    <para>
    </para>   <programlisting role="example"><![CDATA[
 //Example 4: Primal Infeasible Problem
-c=[-1,-1,-1]'
+c=[1,-1,-1]'
 A=[1,2,-1]
 b=[-4]
-Aeq=[1,5,3;1,1,0]
+Aeq=[1,4,3;1,1,0]
 beq=[10,100]
 lb=[0,0,0]
 ub=[%inf,%inf,%inf]
@@ -301,12 +301,12 @@ Unbounded Problems: Find x in R^3 such that it minimizes:
    <para>
 <latex>
 \begin{eqnarray}
-\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  \- x_{3}\\
+\mbox{min}_{x}\ f(x) = x_{1} - x_{2}  - x_{3}\\
 \end{eqnarray}
 \\\text{Subjected to:}\\
 \begin{eqnarray}
-\hspace{70pt} &amp;-x_{1} - x_{2} + 4x{3}&amp;\leq -8\\
-\hspace{70pt} &amp;x_{1} + x_{2} + 4x{3}&amp;\leq 5\\
+\hspace{70pt} &amp;-x_{1} - x_{2} + 4x_{3}&amp;\leq -8\\
+\hspace{70pt} &amp;x_{1} + x_{2} + 4x_{3}&amp;\leq 5\\
 \end{eqnarray}
 \\
 \begin{eqnarray}
@@ -320,7 +320,7 @@ Unbounded Problems: Find x in R^3 such that it minimizes:
    </para>
    <programlisting role="example"><![CDATA[
 //Example 5: Unbounded Problem
-c=[3,5,-7]'
+c=[1,-1,-1]'
 A=[-1,-1,4;1,1,4]
 b=[-8,5]
 Aeq=[]

@@ -34,10 +34,10 @@ int sci_mpsintlinprog(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt
         	return STATUS_ERROR; 
 	}
 	
-	if (nout !=6) //Checking the output arguments
+	if (nout !=8) //Checking the output arguments
 
 	{
-		Scierror(999, "%s: Wrong number of output argument(s): %d expected.\n", fname, 6);
+		Scierror(999, "%s: Wrong number of output argument(s): %d expected.\n", fname, 8);
 		return 1;
 	}
 

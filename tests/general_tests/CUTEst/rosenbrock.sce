@@ -79,7 +79,7 @@ endfunction
 function [cg, ceqg] = cGrad(x)
     cg = [2*x(1),2*x(2)];
     ceqg = [];
-end
+endfunction
 
 //With hessian approximation off
 //options = struct("MaxIter", [15000], "CpuTime", [5000], "GradObj", fGrad, "Hessian", lHess,"GradCon", cGrad,"HessianApproximation", [0]);

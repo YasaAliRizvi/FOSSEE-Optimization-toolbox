@@ -145,9 +145,8 @@ For more details on exitflag see the CLP documentation, go to https://coin-or.gi
 //    x1 <= 3,
 //    x1 >= 0,
 //    x2 >= 0
-H = [2 0
-0 8];
-f = [-8; -16];
+H = [-16 0; 0 -32];
+f = [1; 4];
 A = [1 1;1 0];
 b = [5;3];
 lb = [0; 0];
